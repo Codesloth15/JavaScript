@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" >
+    <title>Document</title>
+</head>
+<body style="background-color: aquamarine;">
+    <h1 id="hw">Hello World</h1>
+    <button type="button" onclick="add()">+</button>
+    <button type="button" onclick="sub()">-</button>
+    <button type="button"  style="background-color: rgb(218, 52, 52)" onclick="succes()">Submit</button>
+    
+  <p><label>First Name: <input type="text" id="firts-name"></label></p>
+  <p><label>Last Name: <input type="text" id="last-name"></label></p>
+  <button onclick="senInfo()">Send Info</button>
+<br><br>
+<div class="container">
+    <div class="card-view">
+        <img class="image-product" src="/shotgun.png">
+        <p>BLUE LINE SOLUTIONS, LLC - BLUE LINE</p>
+        <p class="price">$299.99</p>
+        <p  id="order">0</p>
+        <button type="button" onclick="addProduct()"  class="button-add">add</button>
+        <button type="button" onclick="subProduct()"  class="button-sub">sub</button>
+        <button type="button" onclick="yourOrder()" id="submit" class="button-sub">order</button>
+    </div>
+    
+</div>
+ <script >
+  var oderNumber =0;
+  var price =299.99;
+  var total =0;
+    function addProduct(){
+         oderNumber++;    
+         total +=price;
+        document.getElementById("order").innerHTML=oderNumber+" Total price: "+total.toFixed(2);
+    
+    }
+    function yourOrder(){
+        if(oderNumber!==0){
+        alert(" your total order: " + oderNumber + " total price: " + total);
+        }else{
+            alert("You dont have an order");
+        }
+    }
+
+    function subProduct(){
+        if(!(oderNumber<=0)){
+        oderNumber--;
+      total -=price;
+        document.getElementById("order").innerHTML=oderNumber +" Total price: "+total.toFixed(2);
+     
+        }
+    }
+
+
+ //Variables
+ /*
+ 
+var number = 0;
+
+
+document.getElementById("hw").innerHTML =number;
+function sub() {
+    number --;
+    document.getElementById("hw").innerHTML =number;
+}
+function add() {
+    number ++;
+    document.getElementById("hw").innerHTML =number;
+}
+
+function succes() {
+    if(number == 0) {
+        alert("You dont have any orders to submit");
+    }else{
+        alert("Number of order you have: " + number);
+    }
+  
+}
+x = Array('Cat','Dog');
+alert(x[1]);
+
+var y = prompt("What color do you want to for the background");
+var i =Math.random(1,6) + 1;
+alert(i);
+document.body.style.backgroundColor=y;
+*/
+/*let v = prompt("Enter number of order");
+document.getElementById("hw").innerHTML=v;
+
+var name = document.getElementById("#firts-name")[0].value;
+var last = document.getElementById("#last-name")[0].value;
+var fullName ="Your name is " + name ;
+
+function senInfo() {
+
+alert(fullName);
+}
+*/
+ </script>
+</body>
+</html>
